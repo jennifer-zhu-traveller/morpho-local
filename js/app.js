@@ -8,7 +8,8 @@ var APP = {
 
 		var loader = new THREE.ObjectLoader();
 		var camera, scene;
-
+		var controls = new OrbitControls( camera, renderer.domElement );
+		controls.update();
 		var vrButton = VRButton.createButton( renderer ); // eslint-disable-line no-undef
 
 		var events = {};
@@ -167,6 +168,7 @@ var APP = {
 
 			}
 
+			controls.update();
 			renderer.render( scene, camera );
 
 			prevTime = time;
