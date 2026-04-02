@@ -31,6 +31,9 @@
 				player.setSize( window.innerWidth, window.innerHeight );
 				player.play();
 				document.body.appendChild( player.dom );
+
+				// 强制设置白色背景
+				player.renderer.setClearColor( 0xffffff, 1 );
 				window.addEventListener( 'resize', function () {
 					player.setSize( window.innerWidth, window.innerHeight );
 				} );
